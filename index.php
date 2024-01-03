@@ -19,6 +19,7 @@
   include_once "Controller\auth_controller\controller_auth_Admin.php" ;
   include_once "Controller\Controller_Reservation.php" ;
   include_once "Controller\ControllerClient.php" ;
+  include_once "Controller/front/Controller_notification.php" ;
 
 
 
@@ -32,6 +33,7 @@
    $controller_auth_Admin = new controller_auth_Admin() ; 
    $Controller_reservation = new Controller_reservation() ; 
    $controller_client = new controller_client() ; 
+   $Controller_notification = new Controller_notification() ; 
 
       if (isset($_GET["action"])) {
        $action = $_GET["action"] ; 
