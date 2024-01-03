@@ -46,6 +46,9 @@
         case "addReservation":
             $Controller_reservation->addReservation() ; 
             break;
+        case "checkout":
+            $Controller_reservation->checkout() ; 
+            break;
         case "SignOut":
             $controller_auth_Operateur->SignOut() ; 
             break;

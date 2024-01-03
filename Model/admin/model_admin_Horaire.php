@@ -67,6 +67,29 @@ class Adminhoraire extends Database {
         return $Company;
        
     }
+    public function getByIdhoraire2($id){
+        $consulta = $this->getConnection()->prepare("SELECT 
+        h.ID,
+        h.Date,
+        h.Heure_depart,
+        h.Heure_arrivee,
+        h.price,
+        r.Ville_depart,
+        r.Ville_destination,
+        r.Distance,
+        r.Duree FROM horaire h , route r WHERE h.ID = :id AND h.ID_Route =  r.ID");
+        $consulta->execute(array(
+            "id" => $id
+        ));
+        /* Fetch all of the remaining rows in the result set */
+        $resultados = $consulta->fetch();
+
+       
+      
+    
+        return $resultados;
+       
+    }
     
     public function getByColumnhoraire($column,$value){
         $consulta = $this->getConnection()->prepare("SELECT * 

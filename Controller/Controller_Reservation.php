@@ -7,7 +7,8 @@ class Controller_reservation{
 
     function addReservation() {
         extract($_GET) ; 
-        print_r($_GET) ; 
+       
+       
 
 
         
@@ -16,9 +17,18 @@ class Controller_reservation{
 
         $Adminreservation = new Adminreservation() ; 
         $Adminreservation->Insertreservation($emailClient,$trip_Id,$number_seat) ; 
+        header("Location: index.php?action=checkout&trip_Id=" . $_GET["trip_Id"] . "&route=" . $_GET["route"] . "&number_seat=" . $_GET["number_seat"] . "&data=" . $_GET["data"] . "&emailClient=" . $_GET["emailClient"]);
 
-        //  include_once 'View\front\addCard.php';
+     
 
+
+    }
+    function checkout() {
+        extract($_GET) ; 
+       
+
+     
+        include_once 'View\front\checkout.php';
 
     }
 
