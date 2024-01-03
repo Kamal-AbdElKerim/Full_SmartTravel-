@@ -10,6 +10,26 @@ class Controller_homepage{
         return $homepage->homepage() ; 
 
     }
+    function affichebuycard() {
+        extract($_GET) ; 
+        // print_r($id_card) ; 
+        $id_horaire = $id_card ; 
+        $homepage = new homepage();
+       $reservation =   $homepage->buycard($id_horaire) ; 
+       $CapaciteBus =   $homepage->CapaciteBus($id_horaire) ; 
+
+       $controller_client = new controller_client() ; 
+       $client = $controller_client->controller_select();
+
+     print_r($client) ; 
+
+         include_once 'View\front\addCard.php';
+
+
+    }
+
+
+
 
     function citys() {
         

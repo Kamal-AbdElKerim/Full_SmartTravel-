@@ -39,7 +39,7 @@ class Adminhoraire extends Database {
 
     public function getAllhoraireJoin(){
 
-        $consulta = $this->getConnection()->prepare("SELECT * FROM horaire INNER JOIN company ON company.id = (SELECT Company_id FROM bus WHERE bus.Numero_de_bus = horaire.ID_BUS) INNER JOIN route ON horaire.ID_Route = route.ID ORDER BY Heure_depart ASC ;" );
+        $consulta = $this->getConnection()->prepare("SELECT h.ID ,Date, name,img , Heure_depart,Heure_arrivee,Ville_depart,Ville_destination,price,Company_id,Numero_de_bus ,ID_Bus FROM horaire h ,company c ,bus b ,route r WHERE h.ID_Bus = b.Numero_de_bus AND b.Company_id = c.id AND h.ID_Route = r.ID" );
         $consulta->execute();
         $resultados = $consulta->fetchAll();
  
