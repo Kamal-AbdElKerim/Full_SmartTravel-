@@ -14,10 +14,20 @@ class Controller_homepage{
         extract($_GET) ; 
       
     
+        
+        session_start();
+     
         $id_horaire = $id_card ; 
         $homepage = new homepage();
        $reservation =   $homepage->buycard($id_horaire) ; 
        $CapaciteBus =   $homepage->CapaciteBus($id_horaire) ; 
+       
+    //    echo "<pre>";
+    //    print_r($CapaciteBus);
+    //    echo "</pre>";
+    //    echo "<pre>";
+    //    print_r($reservation);
+    //    echo "</pre>";
  
 
        $controller_horaire = new controller_horaire() ; 
