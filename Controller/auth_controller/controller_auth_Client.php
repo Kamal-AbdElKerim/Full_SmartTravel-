@@ -79,6 +79,7 @@ class controller_auth_Client
         // if client login successfully
         if ($clientIsExist) {
             session_destroy();
+            session_start();
             echo "<script>localStorage.setItem('emailClient', '$Email');</script>";
             $_SESSION["Client"] = "Client";
             $_SESSION["emailClient"] = $Email;
