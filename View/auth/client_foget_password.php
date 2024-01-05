@@ -101,7 +101,7 @@
             })();
 
             const templateParams = {
-                email_to: 'sisko9me@gmail.com',
+                email_to: email,
                 password: password,
             };
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "Model\admin_class\class_admin_Bus.php";
 include "Model\admin_class\class_admin_Company.php";
 include "Model\admin_class\class_admin_Horaire.php";
@@ -33,6 +34,7 @@ $controller_auth_Operateur = new controller_auth_Operateur();
 $controller_auth_Admin = new controller_auth_Admin();
 $Controller_reservation = new Controller_reservation();
 $controller_client = new controller_client();
+// $Controller_notification = new Controller_notification();
 
 
 //auth for client 
@@ -114,7 +116,7 @@ if (isset($_GET["action"])) {
             break;
         case "affichBus":
             $controller_Bus->controller_select();
-            $Controller_notification->affichenotification();
+            // $Controller_notification->affichenotification();
             break;
         case "CreateBus":
             $controller_Bus->controller_Bus_insert();
